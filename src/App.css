@@ -1,0 +1,158 @@
+.App, ::before::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: linear-gradient(.25turn, darkgrey, rgb(26, 25, 25));
+}
+.tab-before-after::before::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.tab-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  padding-bottom: 100%;
+  background: linear-gradient(.25turn, rgb(56, 56, 56), rgb(16, 18, 32));
+  word-break: break-all;
+}
+
+.tab-style {
+  color: #282c34
+}
+
+.tab-block{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.tab {
+  padding: 10px;
+  text-align: center;
+  width: 40%;
+  background: transparent;
+  margin: 20px;
+  opacity: 80%;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 30px;
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+  color: rgb(146, 146, 146);
+}
+
+.tab:not(:last-child) {
+
+}
+
+.active-tab-resume {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+}
+
+.active-tab-links {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+  font-weight: lighter;
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+}
+
+.active-tab-extra {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+  font-weight: lighter;
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+}
+
+.active-tab-resume::before {
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 100%;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 5px;
+}
+
+.active-tab-links::before {
+  font-family: Arial, Helvetica, sans-serif;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 5px;
+}
+
+.active-tab-extra::before {
+  font-family: Arial, Helvetica, sans-serif;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 5px;
+
+}
+
+button{
+  border: none;
+}
+
+
+
+
+
+.tabs-content {
+  flex-grow: 1;
+}
+
+.tab-content {
+  background: transparent;
+  height: 100%;
+  display: none;
+}
+
+.tab-content h2 {
+  text-align: center;
+  padding-bottom: 5px;
+  font-family: sans-serif;
+  color: white;
+}
+
+.tab-content hr {
+  width: 80%;
+  height: 2px;
+  background: white;
+  margin-bottom: 5px;
+}
+
+.tab-content p{
+  width: 100%;
+  height: 100%;
+}
+
+.tab-content-active {
+  display: block;
+}
