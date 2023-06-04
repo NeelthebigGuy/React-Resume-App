@@ -1,0 +1,45 @@
+
+.link-group {
+    display: flex;
+    justify-content: space-around;
+    margin: 5% 10% 0 10%;
+}
+
+.link-group-item {
+    border: 1px solid transparent;
+}
+
+.github-img-link-style {
+    justify-content: center;
+    align-content: center;
+  }
+
+.discord-button {
+    cursor: pointer;
+    background: transparent;
+}
+
+.discord-info {
+    background: transparent;
+    color: transparent;
+}
+
+.discord-info-active {
+    text-align: center;
+    color: white;
+}
+
+.link-content {
+    background: transparent;
+    padding-top: 0;
+    padding-bottom: 25%;
+}
+
+.link-content hr {
+    position: relative;
+    width: 60%;
+    height: 2px;
+    border: 1px solid rgb(94, 94, 94);
+    background: rgb(94, 94, 94);
+    margin-top: 50px;
+}

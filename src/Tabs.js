@@ -1,10 +1,15 @@
 import { useState } from "react";
+
 import Goals from './ResumeGoals';
 import Skills from './ResumeSkills';
 import Education from './ResumeEducation';
 import Expereince from './ResumeExpereince';
+import Links from './link_tab/Links';
+import Extras from './link_extra/Extra';
+
 
 import "./App.css";
+
 
 function Tabs(){
 
@@ -42,7 +47,15 @@ function Tabs(){
                 <div
                 className={toggleState === 1 ? "tab-content tab-content-active" : "tab-content"}>
                     <h2>Resume</h2>
+                    <p className="resume-email-style">
+                        A Computer Science student looking to gain expirence for my future career
+                    </p>
                     <hr/>
+
+                    <p className="resume-email-style">
+                        Contact me at nkhiroya33@gmail.com
+                    </p>
+                    <div className="resume-email-line"/>
 
                     <div className="tab-block-under-resume">
                         
@@ -58,19 +71,25 @@ function Tabs(){
                         <Expereince/>
 
                     </div>
-                    <a href="https://docs.google.com/document/d/1ElMY1HpTh34T16xPBFMsBGQAdYYCjq8L/edit?usp=drive_link&ouid=103309383396972031349&rtpof=true&sd=true">
+                    <a href="https://drive.google.com/file/d/19m2Zoy3LlhsNEddvEOfEcRjs6nphYwBB/view?usp=sharing">
                         <p className="resume-download-style">Click here to download my Resume</p>
                     </a>
                 </div>
 
+
                 <div
                 className={toggleState === 2 ? "tab-content tab-content-active" : "tab-content"}>
-                    <h2>Links</h2>
 
-                    <a href="https://github.com/NeelthebigGuy">
-                    <img className="github-img-link-style" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt='' width={'100'} height={'100'}></img>
-                    </a>
+                    <Links/>
                 
+                </div>
+
+
+                <div
+                className={toggleState === 3 ? "tab-content tab-content-active" : "tab-content"}>
+
+                    <Extras/>
+
                 </div>
             </div>
         </div>

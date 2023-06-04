@@ -1,5 +1,9 @@
-import { useState } from "react";
+import React, {useState, useEffect} from "react";
+import PropType from 'prop-types';
+
 import "./App.css";
+import './animation/animation.css';
+
 
 function ResumeGoals(){
 
@@ -8,6 +12,46 @@ function ResumeGoals(){
     const ResumeToggleTab = (ResumeToggleState) => {
         setResumeToggleState(!ResumeToggleState);
     };
+
+    const Fader = ({ text }) => {
+
+        const [fadeProp, setFadeProp] = useState({
+            fade: 'fade-out',
+        });
+    
+        useEffect(() => {
+            
+                if(ResumeToggleState === true){
+                setFadeProp({
+                    fade: 'fade-in'
+                })
+            }
+
+            
+            
+            return () => {}
+        }, [fadeProp])
+    
+        return (
+            <div className={fadeProp.fade}>
+            
+                {text}
+            
+            </div>
+            
+        );
+    }
+    
+    Fader.defaultProps = {
+        text:   <p>
+                    &emsp;A summer student looking to get his foot in the door of the "computerworld"! While working for a bussiness that is focused
+                    around computers, I hope to gain lots of expereince that i can apply at future jobs. 
+                </p>
+    }
+    
+    Fader.propTypes = {
+        text: PropType.string,
+    }
 
     return(
         <div className="tab-content-block">
@@ -20,11 +64,9 @@ function ResumeGoals(){
                             <hr/>
 
                             <div className={ResumeToggleState === true ? 'resume-content-p resume-content-p-active' : 'resume-content-p'}>
-                                <p>
-                                    &emsp;A summer student looking to get his foot in the door of the "computerworld"! While working for a bussiness that is focused
-                                around computers, I hope to gain lots of expereince that i can apply at future jobs. 
-                                </p>
+                                <Fader/>
                             </div>
+                            
         </div>
 
     );
