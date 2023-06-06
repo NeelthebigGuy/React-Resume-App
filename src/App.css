@@ -5,7 +5,7 @@
 }
 
 body{
-  background: linear-gradient(.25turn, darkgrey, rgb(26, 25, 25));
+  background: linear-gradient(.25turn, rgb(56, 56, 56), rgb(16, 18, 32));
 }
 .tab-before-after::before::after {
   box-sizing: border-box;
@@ -15,11 +15,13 @@ body{
 .tab-container {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   position: relative;
   width: auto;
   height: auto;
   background: linear-gradient(.25turn, rgb(56, 56, 56), rgb(16, 18, 32));
   word-break: break-all;
+  flex-shrink: 0;
 }
 
 .tab-style {
@@ -28,14 +30,14 @@ body{
 
 .tab-block{
   display: flex;
-  justify-content: space-around;
+  justify-content: stretch;
+  align-content: space-evenly;
   align-items: center;
   padding-top: 0;
-  padding-left: 2%;
-  padding-right: 2%;
 }
 
 .tab {
+  word-break: normal;
   padding: 10px;
   text-align: center;
   width: 40%;
@@ -51,11 +53,12 @@ body{
   color: rgb(146, 146, 146);
 }
 
-.tab:not(:last-child) {
-
+.tab:hover {
+  color: white;
 }
 
 .active-tab-resume {
+  word-break: normal;
   font-family: Arial, Helvetica, sans-serif;
   font-size: larger;
   color: white;
@@ -64,6 +67,7 @@ body{
 }
 
 .active-tab-links {
+  word-break: normal;
   font-family: Arial, Helvetica, sans-serif;
   font-size: larger;
   font-weight: lighter;
@@ -73,6 +77,7 @@ body{
 }
 
 .active-tab-extra {
+  word-break: normal;
   font-family: Arial, Helvetica, sans-serif;
   font-size: larger;
   font-weight: lighter;
@@ -124,41 +129,58 @@ button{
 
 
 .tabs-content {
-  flex-grow: 1;
+  flex-grow: 0;
 }
 
 .tab-content {
+  justify-content: center;
   background: transparent;
-  padding-top: 40px;
-  padding-bottom: 80px;
+  margin-top: 2%;
   display: none;
-  padding-bottom: auto;
 }
 
 .tab-block-under-resume{
-  margin: 10% 10% 0 10%;
+  margin: 0 7% 0 7%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  min-height: 200px;
 }
 
 .tab-content-block{
   width: 30%;
+  text-align: center;
+  justify-content: center;
+}
+
+.consideration {
+  word-break: normal;
+  text-align: center;
+  margin: 0% 10% 0% 10%;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-weight: lighter;
+  font-family: sans-serif;
+  font-size: small;
+  color: rgb(141, 141, 141);
 }
 
 .tab-content h2 {
   text-align: center;
   padding-bottom: 5px;
-  padding-top: 5%;
+  padding-top: 5px;
+  font-size: xx-large;
+  font-weight: lighter;
   font-family: sans-serif;
   color: white;
 }
 
 .resume-button{
+  word-break: normal;
   cursor: pointer;
-  font-size: larger;
+  font-size: medium;
   display: block;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 25px;
   background: transparent;
   font-family: sans-serif;
   font-weight: lighter;
@@ -166,42 +188,37 @@ button{
 }
 
 .resume-button-active{
+  justify-items: center;
+  text-align: center;
   cursor: pointer;
-  font-size: 150%;
-  display: block;
+  font-size: x-large;
+  margin: auto;
   margin-top: 15px;
   background: transparent;
   font-family: sans-serif;
   color: rgb(219, 218, 218);
 }
 
+.resume-button:hover {
+  color: white;
+}
 .tab-content hr {
   position: relative;
   width: 60%;
   height: 2px;
   background: white;
-  margin-top: 50px;
-}
-
-.resume-content-p{
-  color: transparent;
-  word-break: normal;
-  margin-left: auto;
-  margin-right: auto;
-  font-weight: light;
-  margin-top: 50px;
-  height: 80px;
+  margin-top: 20px;
 }
 
 .resume-content-p-active{
   word-break: normal;
   overflow: hidden;
   color: rgb(201, 200, 200);
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: -20%;
+  margin-right: -20%;
   margin-top: 30px;
-  height: 100px;
   font-weight: light;
+  display: block;
 }
 
 .resume-content-p-active::before{
@@ -224,19 +241,23 @@ button{
 }
 
 .resume-email-style {
+  word-break: normal;
   overflow: hidden;
-  margin-top: 5%;
+  margin-top: 2%;
   color: grey;
   text-align: center;
 }
 
 .resume-email-line {
   width: 25%;
+  margin-top: 1%;
   margin-left: 37.5%;
   justify-content: center;
   position: relative;
   border: 1px solid rgb(22, 22, 22);
 }
+
 .tab-content-active {
   display: block;
 }
+

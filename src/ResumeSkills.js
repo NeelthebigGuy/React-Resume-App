@@ -31,20 +31,28 @@ function ResumeSkills(){
             return () => {}
         }, [fadeProp])
     
+        if(ResumeToggleState){
+            return (
+                <div className={fadeProp.fade}>
+                
+                    {text}
+                
+                </div>
+                
+            );
+        }
+        else{
         return (
-            <div className={fadeProp.fade}>
-            
-                {text}
-            
-            </div>
-            
+            <div/>
         );
+        }
     }
     
     Fader.defaultProps = {
         text:   <p>
-                    &emsp;Experienced in all aspects of computer maintenance and operation (hardware and software),
-                    disassembly and reassembly of various brands, installation and upgrading of operating systems. 
+                            A team player, reliable, very strong customer service skills, consistently completes
+                            required tasks and duties, quick learner, and can adapt quickly and easily to changing
+                            situations in fast-paced environments. 
                 </p>
     }
     
@@ -62,7 +70,7 @@ function ResumeSkills(){
                 </button>
                             <hr/>
 
-                            <div className={ResumeToggleState === true ? 'resume-content-p resume-content-p-active' : 'resume-content-p'}>
+                            <div className={ResumeToggleState === true ? 'resume-content-p-active ' : ' '}>
                                 
                                 <Fader/>
 

@@ -6,7 +6,7 @@ function Extras() {
     return(
         <div className='fill'>
             <p className='text-style'>
-                Work In Progress
+                Resume PDF should open in new tab.
             </p>
 
         </div>

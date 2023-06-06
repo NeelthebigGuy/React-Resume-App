@@ -31,19 +31,26 @@ function ResumeExpereince(){
             return () => {}
         }, [fadeProp])
     
+        if(ResumeToggleState){
+            return (
+                <div className={fadeProp.fade}>
+                
+                    {text}
+                
+                </div>
+                
+            );
+        }
+        else{
         return (
-            <div className={fadeProp.fade}>
-            
-                {text}
-            
-            </div>
-            
+            <div/>
         );
+        }
     }
     
     Fader.defaultProps = {
         text:   <p>
-                    &emsp;Experienced in all aspects of computer maintenance and operation (hardware and software),
+                    Experienced in all aspects of computer maintenance and operation (hardware and software),
                     disassembly and reassembly of various brands, installation and upgrading of operating systems.
                 </p>
     }
@@ -58,11 +65,11 @@ function ResumeExpereince(){
                 className={ResumeToggleState === true ? 'resume-button resume-button-active' : 'resume-button'}
                 onClick={() => ResumeToggleTab(ResumeToggleState)}
                 >
-                Expereince                        
+                Hardware Experience                        
                 </button>
                             <hr/>
 
-                            <div className={ResumeToggleState === true ? 'resume-content-p resume-content-p-active' : 'resume-content-p'}>
+                            <div className={ResumeToggleState === true ? 'resume-content-p-active' : ' '}>
                                 
                                 <Fader/>
 

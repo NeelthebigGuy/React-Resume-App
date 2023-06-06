@@ -29,19 +29,28 @@ function ResumeEducation(){
             return () => {}
         }, [fadeProp])
     
+        if(ResumeToggleState){
+            return (
+                <div className={fadeProp.fade}>
+                
+                    {text}
+                
+                </div>
+                
+            );
+        }
+        else{
         return (
-            <div className={fadeProp.fade}>
-            
-                {text}
-            
-            </div>
-            
+            <div/>
         );
+        }
     }
     
     Fader.defaultProps = {
         text:   <p>
-                    &emsp;Currently Enrolled in the Bachelor Of Applied Computer Science program at Acadia University (2 out of 4 years completed)
+                            Currently Enrolled in the Bachelor Of Applied Computer Science program at Acadia University (2 out of 4 years completed).
+                            <br/><br/>   
+                            Current GPA of 3.324
                 </p>
     }
     
@@ -59,7 +68,7 @@ function ResumeEducation(){
                 </button>
                             <hr/>
 
-                            <div className={ResumeToggleState === true ? 'resume-content-p resume-content-p-active' : 'resume-content-p'}>
+                            <div className={ResumeToggleState === true ? 'resume-content-p-active ' : ' '}>
                                 
                                 <Fader/>
 

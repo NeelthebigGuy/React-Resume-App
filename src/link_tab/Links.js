@@ -58,6 +58,9 @@ function Links(){
 
     return(
         <div className='link-content'>
+
+            <div className="consideration"> &emsp; </div>
+
             <h2>Links</h2>
             <hr/>
             

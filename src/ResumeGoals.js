@@ -31,21 +31,28 @@ function ResumeGoals(){
             
             return () => {}
         }, [fadeProp])
-    
+        
+
+        if(ResumeToggleState){
+            return (
+                <div className={fadeProp.fade}>
+                
+                    {text}
+                
+                </div>
+                
+            );
+        }
+        else{
         return (
-            <div className={fadeProp.fade}>
-            
-                {text}
-            
-            </div>
-            
+            <div/>
         );
+        }
     }
     
     Fader.defaultProps = {
         text:   <p>
-                    &emsp;A summer student looking to get his foot in the door of the "computerworld"! While working for a bussiness that is focused
-                    around computers, I hope to gain lots of expereince that i can apply at future jobs. 
+                    A Computer Science university student seeking to gain real world expirence in the information technology industry.
                 </p>
     }
     
@@ -59,11 +66,11 @@ function ResumeGoals(){
                 className={ResumeToggleState === true ? 'resume-button resume-button-active' : 'resume-button'}
                 onClick={() => ResumeToggleTab(ResumeToggleState)}
                 >
-                Goals                        
+                Goal                      
                 </button>
                             <hr/>
 
-                            <div className={ResumeToggleState === true ? 'resume-content-p resume-content-p-active' : 'resume-content-p'}>
+                            <div className={ResumeToggleState === true ? 'resume-content-p-active' : ' '}>
                                 <Fader/>
                             </div>
                             
